@@ -1,0 +1,15 @@
+names:
+- carrot
+- celery
+- gripper
+- pretzel
+nc: 4
+roboflow:
+  license: CC BY 4.0
+  project: raf-v1
+  url: https://universe.roboflow.com/raf-uovpx/raf-v1/dataset/1
+  version: 1
+  workspace: raf-uovpx
+test: ../test/images
+train: RAF-v1-1/train/images
+val: RAF-v1-1/valid/images

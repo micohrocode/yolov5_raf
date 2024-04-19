@@ -1,0 +1,21 @@
+names:
+- bowl
+- carrot
+- celery
+- cup
+- fork
+- gripper
+- knife
+- plate
+- pretzel
+- spoon
+nc: 10
+roboflow:
+  license: CC BY 4.0
+  project: raf-v1
+  url: https://universe.roboflow.com/raf-uovpx/raf-v1/dataset/3
+  version: 3
+  workspace: raf-uovpx
+test: ../test/images
+train: RAF-v1-3/train/images
+val: RAF-v1-3/valid/images
