@@ -112,7 +112,7 @@ def main():
     rospy.init_node("arm_cam_detections", anonymous=True)
 
     model = torch.hub.load('ultralytics/yolov5','custom', path=r'C:\Users\mrosa\Documents\repos\yolov5\runs\train\results_v32\weights\best.pt')
-    img = cv2.imread(r'C:\Users\mrosa\Documents\repos\yolov5\RAF-v1-3\train\images\Image_1255_jpg.rf.a19e93c6985613cc3e936bc9b58881c3.jpg')
+    img = run.get_img()
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     results = model(img, size=328)
 
