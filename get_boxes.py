@@ -15,6 +15,21 @@ results = model(img, size=328)  # includes NMS
 results.print()  
 #results.show()  # or .show()
 
-#results = results.xyxy[0]  # img1 predictions (tensor)
 boxes = results.pandas().xyxy[0]  # img1 predictions (pandas)
-print(boxes)
+predictions = {
+    "pred_boxes": [],
+    "pred_classes": [],
+    "scores": []
+}
+
+for index, row in boxes.iterrows():
+    # Access each row's data
+    x1, y1, x2, y2, confidence, class_id, name = row
+    # print(f"Box {index}: x1={x1}, y1={y1}, x2={x2}, y2={y2}, confidence={confidence}, class_id={class_id}, name={name}")
+    predictions['pred_boxes'].append((x1,y1,x2,y2))
+    if class_id not in predictions['pred_classes']:
+        predictions['pred_classes'].append(class_id)
+    predictions['scores'].append(confidence)
+
+print(predictions)
+
